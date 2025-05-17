@@ -2,12 +2,14 @@
 
     <PropertyGroup>
         <PackageId>AnalyzerFriendAccess</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.3</Version>
         <Authors>Jan Górski</Authors>
         <Description>Compile-time Friend access rules.</Description>
         <PackageTags>roslyn;analyzer;code-quality</PackageTags>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <LangVersion>latest</LangVersion>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <PackageType>Analyzer</PackageType>
         <!-- Build settings -->
         <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
         <TargetFramework>net9.0</TargetFramework>
@@ -33,6 +35,10 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Analyzer Include="$(TargetPath)" Pack="true" />
     </ItemGroup>
 
 </Project>
